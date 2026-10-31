@@ -1,0 +1,24 @@
+SAFE MALWARE BEHAVIOR SIMULATION
+Fictional devices; in-memory state only; no real system changes.
+
+Virus:
+  - Virus: Device-1 begins as the infected host.
+  - Virus: simulated file transfer copied the state from Device-1 to Device-2.
+  - Virus: simulated file transfer copied the state from Device-2 to Device-4.
+  - Virus: simulated file transfer copied the state from Device-4 to Device-6.
+  Result: 4/6 infected-state devices; 0 disguised/suspicious-state devices.
+
+Worm:
+  - Worm: Device-1 begins as the infected host.
+  - Worm: abstract network link reached Device-2 from Device-1.
+  - Worm: abstract network link reached Device-3 from Device-1.
+  - Worm: abstract network link reached Device-4 from Device-2.
+  - Worm: abstract network link reached Device-5 from Device-3.
+  - Worm: abstract network link reached Device-6 from Device-4.
+  Result: 6/6 infected-state devices; 0 disguised/suspicious-state devices.
+
+Trojan:
+  - Trojan: Device-3 is labeled as a harmless-looking utility.
+  - Trojan: the simulated disguise is revealed; no payload is executed.
+  Result: 0/6 infected-state devices; 1 disguised/suspicious-state devices.
+
